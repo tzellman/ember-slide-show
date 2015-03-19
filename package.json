@@ -1,6 +1,6 @@
 {
   "name": "ember-slide-show",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple slide-show component addon for Ember CLI",
   "directories": {
     "doc": "doc",
