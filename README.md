@@ -8,15 +8,6 @@ ember-slide-show is a simple Ember CLI addon that can be used to add a slideshow
 ember install:npm ember-slide-show
 ```
 
-### Requirements
-
-ember-slide-show currently uses [bourbon](http://bourbon.io) which requires the broccoli-sass module.
-
-```
-ember install:npm broccoli-sass
-ember install:bower bourbon
-```
-
 ## Using in your app
 
 Use the slide-show component in your template:
@@ -72,6 +63,12 @@ templates
         -outline.hbs
         -welcome.hbs
         -why-ember.hbs
+```
+
+You can create a new slide by invoking the slide generator:
+
+```
+ember generate slide slideName
 ```
 
 There is an optional and implicit header and footer template that can be provided that will render above and below the slides, if provided.

@@ -5,6 +5,7 @@ module.exports = {
     },
 
     afterInstall: function () {
-        return this.addBowerPackageToProject('bourbon');
+        this.addBowerPackageToProject('bourbon');
+        return this.addPackageToProject('broccoli-sass');
     }
 };
