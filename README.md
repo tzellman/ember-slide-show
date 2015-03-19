@@ -1,25 +1,82 @@
-# Ember-slide-show
+# ember-slide-show
 
-This README outlines the details of collaborating on this Ember addon.
+ember-slide-show is a simple Ember CLI addon that can be used to add a slideshow to your ember app.
 
-## Installation
+## Installing
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```
+ember install:npm ember-slide-show
+```
 
-## Running
+### Requirements
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+ember-slide-show currently uses [bourbon](http://bourbon.io) which requires the broccoli-sass module.
 
-## Running Tests
+```
+ember install:npm broccoli-sass
+ember install:bower bourbon
+```
 
-* `ember test`
-* `ember test --server`
+## Using in your app
 
-## Building
+Use the slide-show component in your template:
 
-* `ember build`
+```hbs
+{{slide-show slideIndex=slideIndex slides=slides}}
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+// slideIndex should be bound to a query_param variable so you can keep state
+// slides is an array of strings - each the name of a template in the slide-show/ directory
+```
+
+Your controller would look something like this:
+```js
+import Ember from "ember";
+import SlideShowController from "ember-slide-show/mixins/slide-show-controller";
+
+export default Ember.Controller.extend(SlideShowController, {
+
+    // the slides are the content in this simple app
+    slides: function () {
+        return this.get("content");
+    }.property("content")
+});
+```
+
+The slides (each one a separate handlebars template) can be provided any way you like; this example provides them via the route:
+```js
+import Ember from 'ember';
+
+var SLIDES = [
+    "welcome",
+    "outline",
+    "why-ember",
+    "chuck-norris",
+    "end"
+];
+
+export default Ember.Route.extend({
+
+    model: function () {
+        return SLIDES;
+    }
+});
+```
+
+The convention for ember-slide-show is to look for slides in the templates/slide-show directory.
+
+```
+templates
+    slide-show
+        -chuck-norris.hbs
+        -end.hbs
+        -outline.hbs
+        -welcome.hbs
+        -why-ember.hbs
+```
+
+There is an optional and implicit header and footer template that can be provided that will render above and below the slides, if provided.
+
+
+## License
+
+ember-slide-show is released under the MIT license.

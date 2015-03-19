@@ -1,0 +1,87 @@
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+.slide-show {
+
+    @include display(flex);
+    @include flex-direction(column);
+
+    a {
+        color: rgb(29, 125, 199);
+        text-decoration: none;
+        cursor: pointer;
+        &.no-link {
+            cursor: default;
+        }
+    }
+
+    > .slide {
+        min-height: 80vmin;
+        height: 100%;
+        color: #000;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: white;
+
+        @include display(flex);
+        @include flex-direction(column);
+        @include align-items(stretch);
+
+        > div {
+            @include display(flex);
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include flex-shrink(1);
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            @include align-self(center);
+
+            &.center {
+                @include flex-grow(2);
+            }
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            @include align-self(center);
+        }
+
+        .content {
+            margin: 2rem;
+            @include flex-direction(column);
+            @include align-items(flex-start);
+            @include flex-grow(2);
+            @include justify-content(flex-start);
+            font-size: 2rem;
+
+            ul li {
+                margin: 0.5rem;
+            }
+
+            > ul {
+                > li {
+                    margin: 1rem 0.5rem;
+                }
+            }
+
+            .center {
+                @include align-self(center);
+                text-align: center;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 1rem;
+        text-align: center;
+        width: 100%;
+        font-size: 0.8rem;
+        color: lighten(#000, 50%);
+    }
+
+}

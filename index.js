@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-slide-show'
+    name: 'ember-slide-show'
 };
