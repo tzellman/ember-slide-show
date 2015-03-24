@@ -5,8 +5,7 @@ ember-slide-show is a simple Ember CLI addon that can be used to add a slideshow
 ## Installing
 
 ```
-ember install:npm ember-slide-show
-ember g ember-slide-show #apply the blueprint
+ember install:addon ember-slide-show
 ```
 
 ## Using in your app
