@@ -1,3 +1,7 @@
+[![Dependency Status][dependency-image]][dependency-rul]
+[![NPM version][npm-image]][npm-url]
+[![Ember Observer Score][observer-image]][observer-url]
+
 # ember-slide-show
 
 ember-slide-show is a simple Ember CLI addon that can be used to add a slideshow to your ember app.
@@ -80,3 +84,10 @@ There is an optional and implicit header and footer template that can be provide
 ## License
 
 ember-slide-show is released under the MIT license.
+
+[npm-image]: https://img.shields.io/npm/v/ember-slide-show.svg
+[npm-url]: https://www.npmjs.com/package/ember-slide-show
+[dependency-image]: https://david-dm.org/tzellman/ember-slide-show.svg
+[dependency-rul]: https://david-dm.org/tzellman/ember-slide-show
+[observer-image]: http://emberobserver.com/badges/ember-slide-show.svg
+[observer-url]: http://emberobserver.com/addons/ember-slide-show
