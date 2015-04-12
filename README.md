@@ -1,4 +1,4 @@
-[![Dependency Status][dependency-image]][dependency-rul]
+[![Dependency Status][dependency-image]][dependency-url]
 [![NPM version][npm-image]][npm-url]
 [![Ember Observer Score][observer-image]][observer-url]
 
@@ -76,9 +76,6 @@ You can create a new slide by invoking the slide generator:
 ```
 ember generate slide slideName
 ```
-
-There is an optional and implicit header and footer template that can be provided that will render above and below the slides, if provided.
-
 
 ## License
 
