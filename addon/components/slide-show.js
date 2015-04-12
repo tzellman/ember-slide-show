@@ -17,6 +17,10 @@ export default Ember.Component.extend({
 
     slideTemplateDir: "slide-show",
 
+    headerTemplateName: "header",
+
+    footerTemplateName: "footer",
+
     onInsertion: function () {
         this._keyHandler = this.onKeyUp.bind(this);
         this.$(document).on('keyup', this._keyHandler);
@@ -53,8 +57,27 @@ export default Ember.Component.extend({
         }
     },
 
+    headerTemplateFullName: Ember.computed(function () {
+        return this.get("slideTemplateDir") + "/" + this.get('headerTemplateName');
+    }),
+
+    footerTemplateFullName: Ember.computed(function () {
+        return this.get("slideTemplateDir") + "/" + this.get('footerTemplateName');
+    }),
+
     slideTemplate: function () {
         return this.get("slideTemplateDir") + "/" + this.get("slides").objectAt(parseInt(this.get("slideIndex")));
-    }.property("slides", "slideIndex")
+    }.property("slides", "slideIndex"),
 
+    headerTemplate: Ember.computed(function () {
+        if (this.container.has('template:' + this.get("headerTemplateFullName"))) {
+            return this.get("headerTemplateFullName");
+        }
+    }),
+
+    footerTemplate: Ember.computed(function () {
+        if (this.container.has('template:' + this.get("footerTemplateFullName"))) {
+            return this.get("footerTemplateFullName");
+        }
+    })
 });
